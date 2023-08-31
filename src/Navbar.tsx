@@ -1,6 +1,6 @@
-import { Link } from 'react-router-dom';
 import logo from './github-mark/github-mark/github-mark.png';
 import { useState } from 'react';
+import { CustomLink } from './CustomLink';
 export function Navbar(){
     const [ checked, setChecked ] = useState(false);
 
@@ -9,10 +9,10 @@ export function Navbar(){
             <img alt="logo" src={ logo } onClick={() => window.open("https://github.com/JosephJuska", "_blank")} />
             
             <ul className={checked? 'show' : ''}>
-                <li><Link onClick={() => setChecked(false)} to="/">Home</Link></li>
-                <li><Link onClick={() => setChecked(false)} to="/About">About</Link></li>
-                <li><Link onClick={() => setChecked(false)} to="/Services">Services</Link></li> 
-                <li><Link onClick={() => setChecked(false)} to="/Contact">Contact</Link></li>
+                <li><CustomLink to="/" onClick={() => setChecked(false)}>Home</CustomLink></li>
+                <li><CustomLink to="/About" onClick={() => setChecked(false)}>About</CustomLink></li>
+                <li><CustomLink to="/Services" onClick={() => setChecked(false)}>Services</CustomLink></li> 
+                <li><CustomLink to="/Contact" onClick={() => setChecked(false)}>Contact</CustomLink></li>
             </ul>
 
             <label className="menu" htmlFor="check">
